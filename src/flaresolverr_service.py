@@ -260,6 +260,9 @@ def click_verify(driver: WebDriver):
         checkbox = driver.find_element(
             by=By.XPATH,
             value='//*[@id="content"]/div/div/label/input',
+        ) or driver.find_element(
+            by=By.CSS_SELECTOR,
+            value='input[type=checkbox]',
         )
         if checkbox:
             actions = ActionChains(driver)
